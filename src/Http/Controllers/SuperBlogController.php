@@ -1,6 +1,6 @@
 <?php
 
-namespace SoftwarescCares\SuperBlog\Http\Controllers;
+namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
 use Illuminate\Http\Request;
 
