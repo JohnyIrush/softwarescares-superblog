@@ -1,21 +1,7 @@
 <?php
 
-/**
- * Having Problem With Laravel 8
- * Controller namespacing
- * use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogController;
- * Route::get('/superblog','SuperBlogController@index');
- * Route::group(['namespace'=>'SoftwaresCares\SuperBlog\Http\Controllers'],function(){
- *   Route::get('/superblog','SuperBlogController@index')->name('superblog');
- *});
+use SoftwaresCares\SuperBlog\Http\Controllers\SuperblogController;
 
- * The package will use closure
- * Until the problem is fixed
-*/
+Route::get('/superblog', [SuperblogController::class, 'index']);
 
-
-
-Route::get('/superblog',function(){
-    return view('superblog::blog');
-}); 
 
