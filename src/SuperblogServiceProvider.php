@@ -29,7 +29,7 @@ class SuperblogServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'superblog');
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/superblog'),
+            __DIR__.'/../public' => public_path('/public'),
         ], 'public');
 
     }
