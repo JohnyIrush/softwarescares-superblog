@@ -1,0 +1,23 @@
+/*Make the header nav bar fixed ---- failed*/
+
+.web-header-navbar-pos{
+    position: fixed;
+}
+
+.web-footer-pos{
+    margin-bottom: 1px;
+    position: relative;
+   }
+
+/*Positioning Sections relative to the fixed header---failed*/
+.web-sections-pos-header {
+    position: absolute;
+    z-index: -1;
+}
+
+/*Position widget at the botton*/
+
+.bottom-pos{
+    bottom: 0px;
+    position: absolute;
+}

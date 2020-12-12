@@ -1,0 +1,49 @@
+/*Application Height*/
+.Library-height{
+    height: 85vh;
+}
+
+/*header height*/
+.header-height{ 
+    height: 12.5vh;
+}
+
+/*Body height*/
+
+.body-height{
+    height: 75vh;
+}
+
+.body-width{
+    min-width: 85vh;
+}
+
+/*max-menu dimensions*/
+.max-menu-dimensions{
+    width: 25vh;
+    height: 75vh;
+}
+
+/*muin-menu dimensions*/
+.min-menu-dimensions{
+    width: 16.5vh;
+    height: 100%;
+}
+
+.responsive-page{
+    overflow: hidden;
+    margin: 0;
+}
+
+.cpanel-height{
+    height: 74vh;
+}
+
+.menu-buttons{
+    height: 21vh
+}
+
+/**Main Sidebar*/
+.main-collapsible-sidebar {
+    height: 150vh;
+}

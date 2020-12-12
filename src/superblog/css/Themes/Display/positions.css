@@ -1,0 +1,4 @@
+/*Position widget at the botton*/
+.fixed-position{
+    position: absolute;
+}

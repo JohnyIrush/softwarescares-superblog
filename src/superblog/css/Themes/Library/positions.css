@@ -1,0 +1,6 @@
+/*Position widget at fixed position*/
+.fixed-position{
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
