@@ -1,0 +1,2 @@
+php artisan make:controller Controller -r
+php artisan serve

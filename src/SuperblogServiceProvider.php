@@ -27,6 +27,10 @@ class SuperblogServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         $this->loadViewsFrom(__DIR__.'/views', 'superblog');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'superblog');
+        $this->publishes([
+            __DIR__.'/../public' => public_path('vendor/superblog'),
+        ], 'public');
 
     }
 }
