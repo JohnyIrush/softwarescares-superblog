@@ -1,3 +1,1 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploader">Upload</button>

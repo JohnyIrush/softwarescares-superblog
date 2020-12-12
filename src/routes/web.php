@@ -2,6 +2,7 @@
 
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperblogController;
 use SoftwaresCares\SuperBlog\Http\Controllers\LibraryController;
+use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
 
 Route::get('/superblog', [SuperblogController::class, 'index']);
 
@@ -13,7 +14,8 @@ Route::get('/superblog', [SuperblogController::class, 'index']);
  * uploads
 */
 
-Route::get('/media', [LibraryController::class, 'media']);
+Route::get('media', [LibraryController::class, 'media'])->name('media');
+Route::post('upload', [UploaderController::class, 'upload'])->name('upload');
 
 
 

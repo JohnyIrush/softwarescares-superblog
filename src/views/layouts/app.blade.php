@@ -29,6 +29,7 @@
             @yield('content')
             @include('superblog::Plugins.Library.Media.widgets.footer')
         </main>
+        @include('superblog::Plugins.Library.Uploader.widgets.uploader')
     </div>
 </body>
 </html>

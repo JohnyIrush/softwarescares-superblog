@@ -2,7 +2,7 @@
     <div class="col-12 card bg-color-red">
         <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Upload</a>
+              @include('superblog::Plugins.Library.Uploader.widgets.uploadTrigger')
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
