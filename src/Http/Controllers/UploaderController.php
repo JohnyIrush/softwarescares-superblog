@@ -2,7 +2,11 @@
 
 namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+
+use SoftwaresCares\SuperBlog\Http\Drivers\UploadStorageDriver;
 
 class UploaderController extends Controller
 {
@@ -12,10 +16,8 @@ class UploaderController extends Controller
      */
     public function upload(Request $request)
     {
-        //$path = $request->file('avatar')->store('avatars');
-
-        //return $path;
-        dd($request->file('avatar')->store('/superblog'));
+       $uploadDriver = new UploadStorageDriver($request->file('upload'));
+       $uploadDriver->uploadToDisk();
     }
 
     /**

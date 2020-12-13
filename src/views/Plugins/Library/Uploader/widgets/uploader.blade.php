@@ -9,11 +9,12 @@
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
             </div>
-            <form action=" {{route('upload')}} " method="POST">
+            <form action=" {{route('upload')}} " method="POST" enctype="multipart/form-data">
+              @csrf
              <div class="modal-body bg-color-darkblue">
               <div class="form-group">
                 <label class="text-primary" for="FileSelector">Select Files</label>
-                <input type="file" class="form-control-file text-white bg-primary" id="FileSelector">
+                <input type="file" name="upload" class="form-control-file text-white bg-primary" id="FileSelector">
               </div>
              </div>
             <div class="modal-footer bg-color-red">
