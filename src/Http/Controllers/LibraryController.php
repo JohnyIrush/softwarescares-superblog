@@ -3,6 +3,7 @@
 namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SoftwaresCares\SuperBlog\Models\Media;
 
 class LibraryController extends Controller
 {
@@ -23,7 +24,7 @@ class LibraryController extends Controller
      */
     public function images()
     {
-        
+        $media = Media::all();
     }
 
     /**
