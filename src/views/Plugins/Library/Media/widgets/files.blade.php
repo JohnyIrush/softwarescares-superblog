@@ -1,4 +1,4 @@
-@if ($type=='image' && sizeof($images)>0  )
+@if ($type=='image' && sizeof($images)>0)
  <div class="row bg-color-darkblue ">
   <div class="col-12 card bg-color-darkblue">
       <div id="fileLibraryIndicators" class="carousel slide" data-ride="carousel">
