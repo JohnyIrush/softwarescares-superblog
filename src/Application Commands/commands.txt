@@ -1,3 +1,11 @@
 php artisan make:controller Controller -r
 php artisan serve
 php artisan model:MediaFile -m
+php artisan make:seed ImagesSeeder
+php artisan db:seed
+
+Composer dump-autoload
+
+php artisan migrate:fresh
+php artisan cache:clear
+php artisan vendor:publish --tag=public --force

@@ -10,16 +10,16 @@
         <ul class="navbar-nav">
             <!-- Authentication Links -->
                 <li class="nav-item">
-                    <a class="nav-link" href="">Images</a>
+                    <a class="nav-link" href="{{route('images')}}" href="">Images</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Text Files</a>
+                    <a class="nav-link" href="{{route('text')}}" href="">Text Files</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Videos</a>
+                    <a class="nav-link" href="{{route('videos')}}" href="">Videos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Audios</a>
+                    <a class="nav-link" href="{{route('audios')}}" href="">Audios</a>
                 </li>
                 <!--
                 <li class="nav-item dropdown">

@@ -31,6 +31,9 @@
         </main>
         @include('superblog::Plugins.Library.Uploader.widgets.uploader')
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('superblog/js/Themes/Library/classRemover.js') }}" defer></script>
 </body>
 </html>
  

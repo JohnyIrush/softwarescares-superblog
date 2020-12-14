@@ -25,14 +25,14 @@ class UploadStorageDriver
         if ($fileExtension=="jpg" || $fileExtension=="png" || $fileExtension=="jpeg" ) 
         {
             $type = 'image';
-            $path = $this->file->store('images','public');
+            $path = '/storage' . '/' . $this->file->store('images','public');
             $this->saveToDatabase($path,$type);
         }
 
         else if ($fileExtension=="mp4" || $fileExtension=="mkv" || $fileExtension=="mov" ) 
         {
             $type = 'video';
-            $path = $this->file->store('videos','public');
+            $path = '/storage' . '/' . $this->file->store('videos','public');
             $this->saveToDatabase($path,$type);
         }
 
@@ -40,14 +40,14 @@ class UploadStorageDriver
         else if ($fileExtension=="mp3") 
         {
             $type = 'audio';
-            $path = $this->file->store('audios','public');
+            $path = '/storage' . '/' . $this->file->store('audios','public');
             $this->saveToDatabase($path,$type);
         }
 
-        else if ($fileExtension=="txt" || $fileExtension=="doc" || $fileExtension=="rtf" ) 
+        else if ($fileExtension=="txt" || $fileExtension=="doc" || $fileExtension=="rtf" || $fileExtension=="pdf" || $fileExtension=="docx" ) 
         {
             $type = 'text';
-            $path = $this->file->store('documents','public');
+            $path = '/storage' . '/' . $this->file->store('documents','public');
             $this->saveToDatabase($path,$type);
         }
 
