@@ -4,6 +4,7 @@ namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
 use Illuminate\Http\Request;
 use SoftwaresCares\SuperBlog\Models\Media;
+use SoftwaresCares\SuperBlog\Http\Drivers\StorageCapacityDriver;
 
 class LibraryController extends Controller
 {
@@ -15,7 +16,18 @@ class LibraryController extends Controller
     public function media()
     {
         $type = "all";
-        return view('superblog::Plugins.Library.Media.media')->with(['type'=>$type]);
+        $media = new StorageCapacityDriver();
+        //dd($media->getTotalFilesCount());
+
+        return view('superblog::Plugins.Library.Media.media')->with(
+            [
+                'type'=>$type,
+                'totalFilesCount' => $media->getTotalFilesCount(),
+                'imagesCount' => $media->getTotalImagesCount(),
+                'audiosCount' => $media->getTotalAudiosCount(),
+                'videosCount' => $media->getTotalVideosCount(),
+                'textCount' => $media->getTotalTextFilesCount()
+                ]);
     }
 
     /**
@@ -25,6 +37,7 @@ class LibraryController extends Controller
     {
         $images = Media::where('type', 'image')->get();
         $type = 'image';
+        
         return view('superblog::Plugins.Library.Media.media')->with(['images'=>$images,'type'=>$type]);
     }
 
@@ -57,11 +70,6 @@ class LibraryController extends Controller
         $type = 'audio';
         return view('superblog::Plugins.Library.Media.media')->with(['audios'=>$audios,'type'=>$type]);
     }
-
-
-
-
-
 
     /**
      * 

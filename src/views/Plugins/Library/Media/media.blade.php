@@ -6,6 +6,9 @@
             @include('superblog::Plugins.Library.Media.widgets.sidebar')
         </div>
         <div class="col-10">
+            @if ($type=='all')
+             @include('superblog::Plugins.Library.Media.widgets.menus.media-menu')
+            @endif
             @include('superblog::Plugins.Library.Media.widgets.files')
         </div>
     </div>

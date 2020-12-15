@@ -33,7 +33,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('superblog/js/Themes/Library/HideElements.js') }}" defer></script>
+    <script src="{{ asset('superblog/js/Themes/Library/Request.js') }}" defer></script>
 </body>
 </html>
  

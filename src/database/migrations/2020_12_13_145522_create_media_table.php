@@ -17,6 +17,7 @@ class CreateMediaTable extends Migration
             $table->id();
             $table->string('location');
             $table->string('type');
+            $table->string('format')->nullable(); 
             $table->timestamps();
         });
     }

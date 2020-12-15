@@ -9,17 +9,16 @@
           </ol>
           <div  class="carousel-inner">
             <div class="carousel-item active">
+              <h1 class="text-primary text-center">Images</h1>
             </div>
             @foreach ($images->chunk(8) as $imageGroup)>
             <div class="carousel-item">
-
             <div>
               <div class="row">
                 @foreach ($imageGroup as $image)
                 <div class="col-3">
                   <div class="card bg-color-dark">
-                    <div class="card-header">
-                    </div>
+                    @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
                     <div class="card-body">
                       <img src="{{$image->location}}" class="img-fluid" alt="" srcset="">
                     </div>
@@ -43,9 +42,11 @@
         </div>
   </div>
 </div>
+@else
+
 @endif
 
-@if ($type=='text' && sizeof($text)>0)
+@if ($type=='text')
  <div class="row bg-color-darkblue ">
   <div class="col-12 card bg-color-darkblue">
       <div id="fileLibraryIndicators" class="carousel slide" data-ride="carousel">
@@ -56,17 +57,16 @@
           </ol>
           <div  class="carousel-inner">
             <div class="carousel-item active">
+              <h1 class="text-primary text-center">Text Files</h1>
             </div>
             @foreach ($text->chunk(8) as $textGroup)>
             <div class="carousel-item">
-
             <div>
               <div class="row">
                 @foreach ($textGroup as $doc)
                 <div class="col-3">
                   <div class="card bg-color-dark">
-                    <div class="card-header">
-                    </div>
+                    @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
                     <div class="card-body">
                       <embed width="100%" height="100%" src="{{$doc->location}}">
                     </div>
@@ -89,6 +89,8 @@
         </div>
   </div>
 </div>
+
+
 @endif
 
 @if ($type=='video' && sizeof($videos)>0)
@@ -102,6 +104,7 @@
           </ol>
           <div  class="carousel-inner">
             <div class="carousel-item active">
+              <h1 class="text-primary text-center">Videos</h1>
             </div>
             @foreach ($videos->chunk(4) as $videoGroup)>
             <div class="carousel-item">
@@ -111,8 +114,7 @@
                 @foreach ($videoGroup as $video)
                 <div class="col-6">
                   <div class="card bg-color-dark">
-                    <div class="card-header">
-                    </div>
+                    @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
                     <div class="card-body">
                         <video width="100" height="100" controls>
                           <source src="{{$video->location}}" type="video/mp4">
@@ -137,6 +139,8 @@
         </div>
   </div>
 </div>
+@else
+
 @endif
 
 @if ($type=='audio' && sizeof($audios)>0)
@@ -150,6 +154,7 @@
           </ol>
           <div  class="carousel-inner">
             <div class="carousel-item active">
+              <h1 class="text-primary text-center">Audios</h1>
             </div>
             @foreach ($audios->chunk(4) as $audioGroup)>
             <div class="carousel-item">
@@ -159,8 +164,7 @@
                 @foreach ($audioGroup as $audio)
                 <div class="col-6">
                   <div class="card bg-color-dark">
-                    <div class="card-header">
-                    </div>
+                    @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
                     <div class="card-body">
                         <audio controls>
                           <source src="{{$audio->location}}" type="audio/mpeg">
@@ -185,6 +189,8 @@
         </div>
   </div>
 </div>
+@else
+
 @endif
 
 
