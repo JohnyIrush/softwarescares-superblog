@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown-menu" aria-labelledby="fileoptions">
+  <div class="dropdown-menu bg-color-dark" aria-labelledby="fileoptions">
     <button @click="deleteFile()" class="dropdown-item bg-danger text-white" >Delete File</button>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
