@@ -9,7 +9,7 @@
             @if ($type=='all')
              @include('superblog::Plugins.Library.Media.widgets.menus.media-menu')
             @endif
-            @include('superblog::Plugins.Library.Media.widgets.files')
+            @include('superblog::Plugins.Library.Media.widgets.files')    
         </div>
     </div>
 </div>

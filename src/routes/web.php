@@ -14,13 +14,19 @@ Route::get('/superblog', [SuperblogController::class, 'index']);
  * uploads
 */
 
-Route::get('media', [LibraryController::class, 'media'])->name('media');
-Route::get('images', [LibraryController::class, 'images'])->name('images');
-Route::get('videos', [LibraryController::class, 'videos'])->name('videos');
-Route::get('text', [LibraryController::class, 'text'])->name('text');
-Route::get('audios', [LibraryController::class, 'audios'])->name('audios');
+//Media Display
+Route::get('media', [LibraryController::class, 'media'])->name('media'); //Media Dashboard Display
+Route::get('images', [LibraryController::class, 'images'])->name('images'); //Images Display
+Route::get('videos', [LibraryController::class, 'videos'])->name('videos'); //videos Display
+Route::get('text', [LibraryController::class, 'text'])->name('text'); //text Display
+Route::get('audios', [LibraryController::class, 'audios'])->name('audios'); //audio Display
 
-Route::post('upload', [UploaderController::class, 'upload'])->name('upload');
+
+//library Medua Management
+Route::post('upload', [UploaderController::class, 'upload'])->name('upload'); //upload files
+Route::post('delete', [LibraryController::class, 'destroy'])->name('delete'); //delete file
+
+
 
 
 

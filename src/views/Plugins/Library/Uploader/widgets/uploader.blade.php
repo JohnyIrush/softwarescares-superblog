@@ -10,7 +10,6 @@
               </button>
             </div>
             <form  method="POST" enctype="multipart/form-data">
-              {{csrf_field()}}
              <div class="modal-body bg-color-darkblue">
               <div class="form-group">
                 <label class="text-primary" for="FileSelector">Select Files</label>

@@ -10,15 +10,15 @@
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
             </div>
-            <form  method="POST" enctype="multipart/form-data">
+            <form @submit.prevent="upload()"  method="POST" enctype="multipart/form-data">
              <div class="modal-body bg-color-darkblue">
               <div class="form-group">
                 <label class="text-primary" for="FileSelector">Select Files</label>
-                <input type="file" name="upload" id="file" class="form-control-file text-white bg-primary">
+                <input type="file" name="upload" id="file" class="form-control-file text-white bg-primary" multiple>
               </div>
              </div>
             <div class="modal-footer bg-color-red">
-              <button id="upload-submit" type="submit" class="btn btn-success">Upload</button>
+              <input  type="submit" class="btn btn-success" value="upload">
             </div>
            </form>
           </div>
@@ -42,10 +42,32 @@ export default {
     },
 
   methods: {
+    //upload File/s To The server
+     async upload(){
+
+       const files = $('#file').val(); //upload input
+
+       if (files=='') {
+           alert('No Files Selected')
+       }
+       else{
+         const res = await this.sendRequest('post','upload',files);
+         console.log(res);
+       }
+
+       
+
+       //console.log(files);
+
+       //alert('test 3 uploader')
+
+       //alert(files)
+         
+     },
 
   },
   mounted(){
-
+  //alert('test 2 uploader')
   }
 
 }

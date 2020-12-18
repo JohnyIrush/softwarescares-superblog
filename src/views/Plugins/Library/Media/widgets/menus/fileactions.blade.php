@@ -13,11 +13,16 @@
         <button class="btn btn-primary dropdown-toggle" type="button" id="fileoptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Options
         </button>
+        <!--file actions (delete,rename)-->
+        <fileActions></fileActions>
+        <!--
         <div class="dropdown-menu" aria-labelledby="fileoptions">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        </div>        
+        -->
+
       </div>
      </div>
     </div>

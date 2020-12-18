@@ -33,7 +33,7 @@ class SuperblogServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/superblog-vue-components' => public_path('../resources/js/superblog-vue-components'),
-        ], 'resources/js');
+            __DIR__.'/superblog-vue-components' => public_path('../resources/js'),
+        ], 'superblog-components');
     }
 }

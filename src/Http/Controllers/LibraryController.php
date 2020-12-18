@@ -5,6 +5,7 @@ namespace SoftwaresCares\SuperBlog\Http\Controllers;
 use Illuminate\Http\Request;
 use SoftwaresCares\SuperBlog\Models\Media;
 use SoftwaresCares\SuperBlog\Http\Drivers\StorageCapacityDriver;
+use SoftwaresCares\SuperBlog\Http\Drivers\FileManagerDriver;
 
 class LibraryController extends Controller
 {
@@ -121,6 +122,7 @@ class LibraryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $media = new FileManagerDriver($id);
+        $media->deleteFile();
     }
 }

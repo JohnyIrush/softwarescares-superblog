@@ -16,6 +16,7 @@ class UploaderController extends Controller
      */
     public function upload(Request $request)
     {
+        dd($request);
        $uploadDriver = new UploadStorageDriver($request->file('upload'));
        $uploadDriver->uploadToDisk();
     }
