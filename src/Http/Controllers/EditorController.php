@@ -2,23 +2,18 @@
 
 namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-use SoftwaresCares\SuperBlog\Http\Drivers\UploadStorageDriver;
-
-class UploaderController extends Controller
+class EditorController extends Controller
 {
     /**
-     * Upload Files Into Our
-     * application Media Store
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function upload(Request $request)
+    public function editor()
     {
-        //dd($request);
-       $uploadDriver = new UploadStorageDriver($request->file('upload'));
-       $uploadDriver->uploadToDisk();
+        return view('superblog::Plugins.Editor.Editor');
     }
 
     /**

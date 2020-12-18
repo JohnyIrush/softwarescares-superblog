@@ -30,8 +30,9 @@
             @include('superblog::Plugins.Library.Media.widgets.footer')
         </main>
         <!--include('superblog::Plugins.Library.Uploader.widgets.uploader')--> 
-        <!--Files Uploader-->
-        <uploader></uploader>
+        @include('superblog::Plugins.Library.Uploader.widgets.uploader')
+        <!--Files Uploader<uploader></uploader>-->
+        
     </div>
 
     <!-- Scripts -->

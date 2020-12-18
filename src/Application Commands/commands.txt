@@ -9,3 +9,8 @@ Composer dump-autoload
 php artisan migrate:fresh
 php artisan cache:clear
 php artisan vendor:publish --tag=public --force
+php artisan vendor:publish --tag=superblog-components --force
+
+npm run watch
+
+npm install vue-sweetalert2

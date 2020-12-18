@@ -14,7 +14,8 @@
           Options
         </button>
         <!--file actions (delete,rename)-->
-        <fileActions></fileActions>
+        <fileactions :id="{{$audio->id}}" ></fileactions>
+
         <!--
         <div class="dropdown-menu" aria-labelledby="fileoptions">
           <a class="dropdown-item" href="#">Action</a>

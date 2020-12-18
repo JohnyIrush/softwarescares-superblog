@@ -19,7 +19,7 @@
                   @foreach ($imageGroup as $image)
                   <div class="col-3">
                     <div class="card bg-color-dark">
-                      @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
+                      @include('superblog::Plugins.Library.Media.widgets.menus.imagesfileactions')
                       <div class="card-body">
                         <img src="{{$image->location}}" class="img-fluid" alt="" srcset="">
                       </div>
@@ -68,7 +68,7 @@
                   @foreach ($textGroup as $doc)
                    <div class="col-3">
                      <div class="card bg-color-dark">
-                       @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
+                       @include('superblog::Plugins.Library.Media.widgets.menus.textfileactions')
                        <div class="card-body">
                          <embed width="100%" height="100%" src="{{$doc->location}}">
                        </div>
@@ -119,7 +119,7 @@
                   @foreach ($videoGroup as $video)
                    <div class="col-6">
                      <div class="card bg-color-dark">
-                       @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
+                       @include('superblog::Plugins.Library.Media.widgets.menus.videosfileactions')
                        <div class="card-body">
                            <video width="100" height="100" controls>
                              <source src="{{$video->location}}" type="video/mp4">
@@ -170,7 +170,7 @@
                @foreach ($audioGroup as $audio)
                <div class="col-6">
                  <div class="card bg-color-dark">
-                   @include('superblog::Plugins.Library.Media.widgets.menus.fileactions')
+                   @include('superblog::Plugins.Library.Media.widgets.menus.audiosfileactions')
                    <div class="card-body">
                        <audio controls>
                          <source src="{{$audio->location}}" type="audio/mpeg">

@@ -5,7 +5,7 @@ window.Vue = require('vue');
 
 
 Vue.component('uploader', require('./Plugins/Library/Uploader/widgets/uploader.vue').default); //File Uploader
-Vue.component('fileActions', require('./Plugins/Library/Media/widgets/fileActions.vue').default); //File management actions (Delete, Rename etc)
+Vue.component('fileactions', require('./Plugins/Library/Media/widgets/fileActions.vue').default); //File management actions (Delete, Rename etc)
 
 //import Plugin classes
 

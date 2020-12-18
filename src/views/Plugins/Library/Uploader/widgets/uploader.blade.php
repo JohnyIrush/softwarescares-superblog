@@ -9,7 +9,7 @@
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
             </div>
-            <form  method="POST" enctype="multipart/form-data">
+            <form action="{{route('upload')}}" method="POST" enctype="multipart/form-data">
              <div class="modal-body bg-color-darkblue">
               <div class="form-group">
                 <label class="text-primary" for="FileSelector">Select Files</label>

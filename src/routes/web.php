@@ -22,9 +22,13 @@ Route::get('text', [LibraryController::class, 'text'])->name('text'); //text Dis
 Route::get('audios', [LibraryController::class, 'audios'])->name('audios'); //audio Display
 
 
-//library Medua Management
+//library Media Management
 Route::post('upload', [UploaderController::class, 'upload'])->name('upload'); //upload files
-Route::post('delete', [LibraryController::class, 'destroy'])->name('delete'); //delete file
+Route::post('delete/{id}', [LibraryController::class, 'destroy'])->name('delete'); //delete file
+
+
+//content Editor Plugin
+Route::get('editor', [EditorController::class, 'editor'])->name('editor'); //Content Editor
 
 
 
