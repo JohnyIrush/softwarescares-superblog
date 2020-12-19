@@ -18,17 +18,25 @@ class FileManagerDriver
     /**maps file storage disk location
      * by returning new location path
     */
-    public function storageMapper($originalpath,$replacement,$start,$length = null){
-      return substr_replace ($originalpath, $replacement, $start, $length = null);
+    public function storageMapper($search, $replace, $subject){
+      return str_ireplace($search, $replace, $subject);
     }
 
     /*Upload Media In Appropriate Storage Disks*/
     public function deleteFile()
     {
       try {
-        $file = Media::find($this->id);
-        Storage::disk('public')->delete(asset('storage/'. $this->storageMapper($file->location,'app/storage/app/public',0,9)));
-        //dd($this->storageMapper($file->location,'app/storage/app/public',0,9));
+        //$file = Media::find($this->id);
+        //unlink($file->location);
+        //unlink($this->storageMapper('/storage','app/storage/public',$file->location));
+        //unlink($this->storageMapper('/storage' . '/','',$file->location));
+        //dd(unlink($this->storageMapper('/storage' . '/','',$file->location)));
+        //Storage::delete($this->storageMapper('/storage' . '/','',$file->location));
+        //dd($this->storageMapper('/storage' . '/','',$file->location));
+        //return dd(Storage::delete($this->storageMapper('/storage','',$file->location)));
+        //Storage::delete('images/' . $post->image);
+        //dd($this->storageMapper('/storage','',$file->location));
+        //echo $this->storageMapper($file->location,'/',0,11);
         //$file->delete();
         //dd(Storage::delete(asset('storage/'. $this->storageMapper($file->location,'app/storage/app/public',0,9))));
         //dd();

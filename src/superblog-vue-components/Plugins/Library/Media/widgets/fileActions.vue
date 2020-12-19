@@ -28,7 +28,7 @@ export default {
             if (result.value) {
                this.delete();
                //alert(this.delete().status);
-               console.log(this.delete());
+               //console.log(this.delete());
             }
           })
      },
