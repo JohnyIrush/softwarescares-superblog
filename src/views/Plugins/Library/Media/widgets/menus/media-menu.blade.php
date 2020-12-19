@@ -1,6 +1,9 @@
-<div class="row bg-color-darkblue ">
-    <div class="col-12 card bg-color-darkblue">
-        <div class="row  mt-3 mb-3 justify-content-center">
+<div class="row bg-color-darkblue  justify-content-center">
+    <div class="col-3 card bg-color-dark">
+        <diskcapacity></diskcapacity>
+    </div>
+    <div class="col-8 card bg-color-darkblue">
+        <div class="row  mt-1 mb-1 justify-content-center">
          <div class="col-sm-4 justify-content-center">
           <div class="card bg-color-dark text-center">
             <div class="card-body">
@@ -11,7 +14,7 @@
           </div>
          </div>
         </div>
-        <div class="row   mb-3 justify-content-center">
+        <div class="row   mb-1 justify-content-center">
             <div class="col-sm-4 justify-content-center">
                 <div class="card bg-color-dark text-center">
                   <div class="card-header">
@@ -39,7 +42,7 @@
                </div>
             </div>
         </div>
-        <div class="row   mb-3 justify-content-center">
+        <div class="row   mb-1 justify-content-center">
             <div class="col-sm-4 justify-content-center">
                 <div class="card bg-color-dark text-center">
                   <div class="card-header">

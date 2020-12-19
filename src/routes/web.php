@@ -31,7 +31,7 @@ Route::post('delete/{id}', [LibraryController::class, 'destroy'])->name('delete'
 Route::get('editor', [EditorController::class, 'editor'])->name('editor'); //Content Editor
 
 
-
-
+//Disk Management
+Route::get('capacity', [LibraryController::class, 'capacity'])->name('capacity'); //audio Display
 
 

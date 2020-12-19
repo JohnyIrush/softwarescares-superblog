@@ -72,6 +72,17 @@ class LibraryController extends Controller
         return view('superblog::Plugins.Library.Media.media')->with(['audios'=>$audios,'type'=>$type]);
     }
 
+     /**
+     * Get Storage Capacity and media
+     * capacity coverage
+     */
+    public function capacity()
+    {
+        $capacity = new StorageCapacityDriver();
+        $capacity->diskSize();
+    }
+
+
     /**
      * 
      */

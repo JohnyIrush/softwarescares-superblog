@@ -23,7 +23,10 @@
                       <div class="card-body">
                         <img src="{{$image->location}}" class="img-fluid" alt="" srcset="">
                       </div>
-                    </div>
+                      <div class="card-footer">
+                        <p class="text-white text-center"> {{substr_replace ($image->location, " ", 0,16)}} </p>
+                      </div>
+                    </div>	
                   </div>
                   @endforeach
                 </div>
@@ -71,6 +74,9 @@
                        @include('superblog::Plugins.Library.Media.widgets.menus.textfileactions')
                        <div class="card-body">
                          <embed width="100%" height="100%" src="{{$doc->location}}">
+                       </div>
+                       <div class="card-footer">
+                        <p class="text-white text-center"> {{substr_replace ($doc->location, " ", 0,19)}} </p>
                        </div>
                      </div>
                    </div>
@@ -125,6 +131,9 @@
                              <source src="{{$video->location}}" type="video/mp4">
                            </video>
                        </div>
+                       <div class="card-footer">
+                        <p class="text-white text-center"> {{substr_replace ($video->location, " ", 0,16)}} </p>
+                       </div>
                      </div>
                    </div>
                   @endforeach
@@ -175,6 +184,9 @@
                        <audio controls>
                          <source src="{{$audio->location}}" type="audio/mpeg">
                        </audio>
+                   </div>
+                   <div class="card-footer">
+                    <p class="text-white text-center"> {{substr_replace ($audio->location, " ", 0,16)}} </p>
                    </div>
                  </div>
                </div>
