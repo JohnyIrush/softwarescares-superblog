@@ -14,6 +14,10 @@
     "autoload": {
         "psr-4": {
           "SoftwaresCares\\SuperBlog\\": "src/"
-        }
+        },
+        "classmap": [
+            "src/Http/Controllers",
+            "src/Http/Drivers"
+        ]
     }
 }
