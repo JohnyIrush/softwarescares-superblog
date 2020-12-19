@@ -14,3 +14,5 @@ php artisan vendor:publish --tag=superblog-components --force
 npm run watch
 
 npm install vue-sweetalert2
+
+php artisan storage:link
