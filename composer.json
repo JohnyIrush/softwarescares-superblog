@@ -16,7 +16,7 @@
           "SoftwaresCares\\SuperBlog\\": "src/"
         },
         "classmap": [
-            "package/superblog/src/Http/Controllers"
+            "superblog/src/Http/Controllers"
         ]
     }
 }
