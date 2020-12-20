@@ -35,7 +35,7 @@ class SuperblogServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/superblog-vue-components' => public_path('../resources/js'),
+            __DIR__.'/superblog-vue-components' => public_path('../resources/js/softwarescares/superblog'),
         ], 'superblog-components');
 
        // Register the command if we are using the application via the CLI

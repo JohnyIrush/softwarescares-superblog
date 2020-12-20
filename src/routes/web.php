@@ -3,7 +3,7 @@
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperblogController;
 use SoftwaresCares\SuperBlog\Http\Controllers\LibraryController;
 use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
-use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController ;
+use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController;
 
 /*
  use Illuminate\Support\Facades\Storage;

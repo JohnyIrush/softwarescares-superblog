@@ -28,3 +28,4 @@ php artisan make:command SuperBlogInstaller
 composer require softwarescares/superblog
 composer remove softwarescares/superblog
 
+php artisan superblog:install

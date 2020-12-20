@@ -17,7 +17,6 @@ class SuperBlogInstallerController extends Controller
     {
         $installer = new SuperBlogInstaller(); 
         $installer->scriptUpdater(__DIR__ . '/../.././superblog-vue-components/app.js',base_path() . '/resources/js/app.js');
-        //echo __DIR__;
 
     }
 
