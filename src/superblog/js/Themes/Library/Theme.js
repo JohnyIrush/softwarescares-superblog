@@ -3,10 +3,10 @@
  * Make the pages
  * responsive
 */
-$.getScript('/js/Themes/application/responsive.js', function(){
+$.getScript('/superblog/js/Themes/Library/responsive.js', function(){
     $(document).ready(function(){
-        const Application = new Responsive('Application');
-        Application.fitBrowserHeight();
+        const CMS  = new Responsive('CMS');
+        CMS.fitBrowserHeight();
     });
 });
 

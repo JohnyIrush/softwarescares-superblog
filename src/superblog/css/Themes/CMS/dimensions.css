@@ -1,0 +1,32 @@
+/*Application Height*/
+.Application-height{
+    height: 100vh;
+}
+
+/*header height*/
+.header-height{
+    height: 12.5vh;
+}
+
+/*Body height*/
+
+.body-height{
+    height: 75vh;
+}
+
+.body-width{
+    min-width: 75vh;
+}
+
+
+.responsive-page{
+    overflow: hidden;
+    margin: 0;
+}
+
+.sidebar-height{
+    height: 87.5vh;
+}
+
+
+

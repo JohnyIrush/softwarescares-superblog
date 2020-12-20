@@ -4,6 +4,7 @@ use SoftwaresCares\SuperBlog\Http\Controllers\SuperblogController;
 use SoftwaresCares\SuperBlog\Http\Controllers\LibraryController;
 use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController;
+use SoftwaresCares\SuperBlog\Http\Controllers\ContentManagementSystemController;
 
 /*
  use Illuminate\Support\Facades\Storage;
@@ -118,3 +119,7 @@ Route::get('capacity', [LibraryController::class, 'capacity'])->name('capacity')
 
 //Package Installation
 Route::get('scriptupdater', [SuperBlogInstallerController::class, 'scriptUpdater'])->name('scriptupdater'); //audio Display
+
+
+//Content Management System Plugin
+Route::get('cms', [ContentManagementSystemController::class, 'cms'])->name('cms'); //CMS Dashboard
