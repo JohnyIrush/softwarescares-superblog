@@ -4,6 +4,8 @@ namespace SoftwaresCares\SuperBlog;
 
 use Illuminate\Support\ServiceProvider;
 
+use SoftwaresCares\SuperBlog\Console\Commands\SuperBlogInstaller;
+
 class SuperblogServiceProvider extends ServiceProvider
 {
     /**
@@ -35,5 +37,12 @@ class SuperblogServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/superblog-vue-components' => public_path('../resources/js'),
         ], 'superblog-components');
-    }
+
+       // Register the command if we are using the application via the CLI
+       if ($this->app->runningInConsole()) {
+           $this->commands([
+             SuperBlogInstaller::class,
+           ]);
+       }
+       }
 }

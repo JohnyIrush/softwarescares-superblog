@@ -3,6 +3,7 @@
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperblogController;
 use SoftwaresCares\SuperBlog\Http\Controllers\LibraryController;
 use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
+use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController ;
 
 /*
  use Illuminate\Support\Facades\Storage;
@@ -34,7 +35,7 @@ Route::get('/superblog', [SuperblogController::class, 'index']);
 
 //Media Display
 
-Route::get('media', [LibraryController::class, 'media'])->name('media'); //Media Dashboard Display
+Route::get('medialibrary', [LibraryController::class, 'mediaLibrary'])->name('medialibrary'); //Media Dashboard Display
 Route::get('images', [LibraryController::class, 'images'])->name('images'); //Images Display
 Route::get('videos', [LibraryController::class, 'videos'])->name('videos'); //videos Display
 Route::get('text', [LibraryController::class, 'text'])->name('text'); //text Display
@@ -114,3 +115,6 @@ Route::get('capacity', [LibraryController::class, 'capacity'])->name('capacity')
      $capacity->diskSize();
  });
 */
+
+//Package Installation
+Route::get('scriptupdater', [SuperBlogInstallerController::class, 'scriptUpdater'])->name('scriptupdater'); //audio Display

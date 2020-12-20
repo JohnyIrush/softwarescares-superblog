@@ -17,3 +17,13 @@ npm install vue-sweetalert2
 
 php artisan storage:link
 
+chmod +x myscript.php
+php myscript.php
+
+cd package/softwarescares/superblog
+cd softwarescares-superblog
+
+php artisan make:command SuperBlogInstaller
+
+composer require softwarescares/superblog
+

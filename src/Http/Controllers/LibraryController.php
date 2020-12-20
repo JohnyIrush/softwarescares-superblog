@@ -14,7 +14,7 @@ class LibraryController extends Controller
      * Library -> For Management(
      * Delete, Rename, Creation, edit etc) 
      */
-    public function media()
+    public function mediaLibrary()
     {
         $type = "all";
         $media = new StorageCapacityDriver();
