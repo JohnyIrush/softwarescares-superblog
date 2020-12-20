@@ -2,6 +2,8 @@
 
 namespace SoftwaresCares\SuperBlog\Console\Commands;
 
+use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController;
+
 use Illuminate\Console\Command;
 
 class SuperBlogInstaller extends Command
@@ -37,16 +39,17 @@ class SuperBlogInstaller extends Command
      */
     public function handle()
     {
-        $this->info('Installing BlogPackage...');
+        $this->info($this->description);
 
-        $this->info('Publishing configuration...');
-
-        $this->call('vendor:publish', [
-            '--provider' => "JohnDoe\BlogPackage\BlogPackageServiceProvider",
-            '--tag' => "config"
-        ]);
-
-        $this->info('Installed BlogPackage');
+        $installer = new SuperBlogInstallerController();
+        $this->info($installer->scriptUpdater());
+        
+        /*
+         $this->call('vendor:publish', [
+             '--provider' => "SoftwaresCares\SuperBlog\SuperblogServiceProvider",
+             '--tag' => "config"
+         ]);
+        */
 
     }
 }

@@ -26,4 +26,5 @@ cd softwarescares-superblog
 php artisan make:command SuperBlogInstaller
 
 composer require softwarescares/superblog
+composer remove softwarescares/superblog
 
