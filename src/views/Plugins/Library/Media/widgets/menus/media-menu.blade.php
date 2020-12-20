@@ -24,7 +24,7 @@
                     <p class="text-white">Total Videos
                         {{$videosCount}}
                     </p>
-                    <a href="{{route('videos')}}" class="btn btn-primary">View Videos</a>
+                    <a href="videos" class="btn btn-primary">View Videos</a>
                 </div>
                </div>
             </div>
@@ -37,7 +37,7 @@
                     <p class="text-white">Total Images
                         {{$imagesCount}}
                     </p>
-                    <a href="{{route('images')}}" class="btn btn-primary">View Images</a>
+                    <a href="images" class="btn btn-primary">View Images</a>
                   </div>
                </div>
             </div>
@@ -52,7 +52,7 @@
                     <p class="text-white">Total audios
                         {{$audiosCount}}
                     </p>
-                    <a href="{{route('audios')}}" class="btn btn-primary">View Audios</a>
+                    <a href="audios" class="btn btn-primary">View Audios</a>
                 </div>
                </div>
             </div>
@@ -65,7 +65,7 @@
                     <p class="text-white">Total Text
                         {{$textCount}}
                     </p>
-                    <a href="{{route('text')}}" class="btn btn-primary">View Text</a>
+                    <a href="text" class="btn btn-primary">View Text</a>
                   </div>
                </div>
             </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md  shadow-sm bg-color-red">
-    <a class="navbar-brand" href="{{ route('media') }}">Media</a>
+    <a class="navbar-brand" href="/media">Media</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,16 +8,16 @@
         <ul class="navbar-nav">
             <!-- Authentication Links -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('images')}}" href="">Images</a>
+                    <a class="nav-link" href="/images" href="">Images</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('text')}}" href="">Text Files</a>
+                    <a class="nav-link" href="/text" href="">Text Files</a>
                 </li>
-                <!--<li class="nav-item">
-                    <a class="nav-link" href="{route('videos')}" href="">Videos</a>
-                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('audios')}}" href="">Audios</a>
+                    <a class="nav-link" href="/videos" href="">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/audios" href="">Audios</a>
                 </li>
                 <!--
                 <li class="nav-item dropdown">
