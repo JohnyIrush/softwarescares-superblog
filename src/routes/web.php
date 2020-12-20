@@ -15,9 +15,9 @@ use SoftwaresCares\SuperBlog\Http\Drivers\FileManagerDriver;
 
 //Route::get('/superblog', [SuperblogController::class, 'index']);
 
-Route::get('/superblog',function(){
+Route::get('/superblog',array('as' => 'superblog', 'do' =>function(){
     return view('superblog::blog');
-});
+}));
 
 /**
  * Library Plugin -> Handles Media storage 
@@ -35,7 +35,7 @@ Route::get('videos', [LibraryController::class, 'videos'])->name('videos'); //vi
 Route::get('text', [LibraryController::class, 'text'])->name('text'); //text Display
 Route::get('audios', [LibraryController::class, 'audios'])->name('audios'); //audio Display
 */
-Route::get('/media',function(){
+Route::get('/media',array('as' => 'media', 'do' =>function(){
     $type = "all";
     $media = new StorageCapacityDriver();
     //dd($media->getTotalFilesCount());
@@ -49,47 +49,49 @@ Route::get('/media',function(){
             'videosCount' => $media->getTotalVideosCount(),
             'textCount' => $media->getTotalTextFilesCount()
             ]);
-});
+}));
 
 
-Route::get('/images',function(){
+Route::get('/images',array('as' => 'images', 'do' =>function(){
     $images = Media::where('type', 'image')->get();
     $type = 'image';
     
     return view('superblog::Plugins.Library.Media.media')->with(['images'=>$images,'type'=>$type]);
-});
+}));
 
 
-Route::get('/videos',function(){
+Route::get('videos',array('as' => 'videos', 'do' =>function(){
     $videos = Media::where('type', 'video')->get();
     $type = 'video';
     return view('superblog::Plugins.Library.Media.media')->with(['videos'=>$videos,'type'=>$type]);
-});
+}));
 
 
-Route::get('/text',function(){
+
+
+Route::get('/text',array('as' => 'text', 'do' =>function(){
     $text = Media::where('type', 'text')->get();
     $type = 'text';
     return view('superblog::Plugins.Library.Media.media')->with(['text'=>$text,'type'=>$type]);
-});
+}));
 
-Route::get('/audios',function(){
+Route::get('/audios',array('as' => 'audios', 'do' =>function(){
     $audios = Media::where('type', 'audio')->get();
     $type = 'audio';
     return view('superblog::Plugins.Library.Media.media')->with(['audios'=>$audios,'type'=>$type]);
-});
+}));
 
 //library Media Management
 /*
 Route::post('upload', [UploaderController::class, 'upload'])->name('upload'); //upload files
 Route::post('delete/{id}', [LibraryController::class, 'destroy'])->name('delete'); //delete file
 */
-Route::get('/upload',function(Request $request)
+Route::get('/upload',array('as' => 'upload', 'do' =>function(Request $request)
 {
     //dd($request);
    $uploadDriver = new UploadStorageDriver($request->file('upload'));
    $uploadDriver->uploadToDisk();
-});
+}));
 
 Route::get('/delete/{id}',function($id){
     $media = new FileManagerDriver($id);
@@ -97,9 +99,9 @@ Route::get('/delete/{id}',function($id){
 });
 //content Editor Plugin
 //Route::get('editor', [EditorController::class, 'editor'])->name('editor'); //Content Editor
-Route::get('/editor',function(){
+Route::get('/editor',array('as' => 'editor', 'do' =>function(){
     return view('superblog::Plugins.Editor.Editor');
-});
+}));
 
 //Disk Management
 //Route::get('capacity', [LibraryController::class, 'capacity'])->name('capacity'); //audio Display

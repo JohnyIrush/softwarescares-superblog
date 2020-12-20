@@ -13,9 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('text')}}" href="">Text Files</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('videos')}}" href="">Videos</a>
-                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{route('videos')}" href="">Videos</a>
+                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('audios')}}" href="">Audios</a>
                 </li>
