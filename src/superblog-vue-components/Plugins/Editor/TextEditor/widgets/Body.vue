@@ -1,21 +1,20 @@
 <template>
-    <div id="body" class="body-height bg-color-darkblue card hide-x-overflow overflow-scroll" >
+    <div id="body" class="editor-height bg-color-darkblue card hide-x-overflow overflow-scroll" >
       <div class="row justify-content-center">
         <div class="col-12">
-           <cmsmenu></cmsmenu>
+           <RichTextEditor></RichTextEditor>
         </div>
       </div>
     </div>
 </template>
 
 <script>
-import CmsMenu from './cms-menu.vue'
-import cmsmenu from './cms-tools'
+import RichTextEditor from './RichTextEditor'
 export default {
     components:{
-      cmsmenu
+      RichTextEditor
     },
-  Menuethods: {
+  Methods: {
   },
   created () {
   },

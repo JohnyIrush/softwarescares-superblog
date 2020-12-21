@@ -5,6 +5,7 @@ use SoftwaresCares\SuperBlog\Http\Controllers\LibraryController;
 use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController;
 use SoftwaresCares\SuperBlog\Http\Controllers\ContentManagementSystemController;
+use SoftwaresCares\SuperBlog\Http\Controllers\EditorController;
 
 /*
  use Illuminate\Support\Facades\Storage;

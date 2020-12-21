@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-color-red body-height">
+  <div class="card bg-color-red editor-height">
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" href="/medialibrary">Media Library</a>

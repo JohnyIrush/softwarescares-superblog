@@ -11,7 +11,7 @@
 /*Body height*/
 
 .body-height{
-    min-height: 75vh;
+    height: 75vh;
 }
 
 .body-width{
@@ -33,4 +33,8 @@
     height: 12.5vh;
 }
 
-
+/** Plugin Logo Size **/
+.plugin-size{
+    height: 150px;
+    width: 150px;
+}

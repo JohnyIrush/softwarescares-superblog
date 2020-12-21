@@ -29,3 +29,5 @@ composer require softwarescares/superblog
 composer remove softwarescares/superblog
 
 php artisan superblog:install
+
+npm install tiptap-extensions

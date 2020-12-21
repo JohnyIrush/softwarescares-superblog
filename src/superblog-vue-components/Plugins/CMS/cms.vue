@@ -6,7 +6,7 @@
          </div>
        </div>
        <div class="row">
-         <div  class="col-3 bg-color-white">
+         <div  class="col-3">
             <Sidebar></Sidebar>
          </div>
          <div  class="col-9">

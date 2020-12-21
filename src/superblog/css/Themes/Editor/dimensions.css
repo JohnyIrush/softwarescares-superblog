@@ -1,24 +1,5 @@
-.web-header-size{
-    height: 20vh;
+.editor-height{
+    height: 100vh;
 }
 
-.web-footer-height{
-    height: 50vh;
-}
-
-#Web{
-    min-height: 100vh;
-}
-
-
-
-/*Home Page styles*/
-.section-height{
-    height: 90vh;
-}
-
-/**Rectangle Frames */
-.rec-frame-height{
-    height: 10vh;
-}
 

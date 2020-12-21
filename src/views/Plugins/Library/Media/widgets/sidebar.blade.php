@@ -8,7 +8,7 @@
               <a class="nav-link" href="#">Recycle Bin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Editor</a>
+              <a class="nav-link" href="/cms">CMS</a>
             </li>
           </ul>
     </div>

@@ -12,6 +12,9 @@ Vue.component('diskcapacity', require('./softwarescares/superblog/Plugins/Librar
 //Content Management System widgets
 Vue.component('cms', require('./softwarescares/superblog/Plugins/CMS/cms.vue').default); //CMS Dashboard
 
+//CMS Editor imports
+Vue.component('editor', require('./softwarescares/superblog/Plugins/Editor/TextEditor/Editor.vue').default); //Rich text editor
+
 //import Plugin classes
 import Request from './softwarescares/superblog/Plugins/common/Request' //send http requests
 Vue.mixin(Request); //compile commonjs
@@ -21,6 +24,22 @@ Vue.mixin(level); //compile level class
 
 import Swal from "vue-sweetalert2"; //Sweet alerts
 Vue.use(Swal);
+
+//Event bus
+var Event = new Vue();
+window.Event = Event;
+
+//Rich Text Editor Imports
+import Editor from './softwarescares/superblog/Plugins/Editor/TextEditor/Editor'
+Vue.prototype.$Editor = new Editor();
+
+//Media Uploader
+
+import Uploader from './softwarescares/superblog/Plugins/Editor/TextEditor/widgets/MediaUpload/Uploader';
+Vue.prototype.$Uploader = new Uploader();
+
+//chart app event bus
+Vue.prototype.EventBus = new Vue();
 
 const app = new Vue({
     el: '#app',

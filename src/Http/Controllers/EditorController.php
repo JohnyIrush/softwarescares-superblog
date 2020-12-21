@@ -13,7 +13,7 @@ class EditorController extends Controller
      */
     public function editor()
     {
-        return view('superblog::Plugins.Editor.Editor');
+        return view('superblog::Plugins.Editor.TextEditor.Editor');
     }
 
     /**

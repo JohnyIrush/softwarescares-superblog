@@ -26,6 +26,10 @@
     <!--From CMS Plugin-->
     <link href="{{ asset('superblog/css/Themes/CMS/dimensions.css') }}" rel="stylesheet">
     <link href="{{ asset('superblog/css/Themes/CMS/positions.css') }}" rel="stylesheet">
+    <link href="{{ asset('superblog/css/Themes/CMS/layout.css') }}" rel="stylesheet">
+
+    <!--From Editor Plugin-->
+    <link href="{{ asset('superblog/css/Themes/Editor/dimensions.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app" class="bg-color-dark">
