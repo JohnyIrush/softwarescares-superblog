@@ -28,7 +28,7 @@
     <link href="{{ asset('superblog/css/Themes/CMS/positions.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="container-fluid bg-color-dark">
+    <div id="app" class="bg-color-dark">
         <main>
             @yield('content')
         </main>

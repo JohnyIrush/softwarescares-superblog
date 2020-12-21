@@ -11,7 +11,7 @@
 /*Body height*/
 
 .body-height{
-    height: 75vh;
+    min-height: 75vh;
 }
 
 .body-width{
@@ -23,10 +23,14 @@
     overflow: hidden;
     margin: 0;
 }
+/*
+  .sidebar-height{
+      height: 87.5vh;
+  }
+*/
 
-.sidebar-height{
-    height: 87.5vh;
+.footer-height{
+    height: 12.5vh;
 }
-
 
 

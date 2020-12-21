@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-color-red">
+    <div class="container bg-color-red mt-4">
         <div class="row">
           <div class="col align-self-center">
               <p class="text-primary text-center">

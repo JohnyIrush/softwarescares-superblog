@@ -5,9 +5,9 @@
             <Header></Header>
          </div>
        </div>
-       <div class="row align-items-end no-gutters">
-         <div  class="col-3 ">
-            <sidebar></sidebar>
+       <div class="row">
+         <div  class="col-3 bg-color-white">
+            <Sidebar></Sidebar>
          </div>
          <div  class="col-9">
             <Body></Body>
@@ -25,12 +25,14 @@
 import Header from './widgets/Header'
 import Footer from './widgets/Footer'
 import Body from './widgets/menus/body'
+import Sidebar from './widgets/Sidebar'
 
 export default {
       components:{
         Header,
         Footer,
-        Body
+        Body,
+        Sidebar
       }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <div id="footer" class="header-height bg-color-dark" >
-        <div class="row justify-content-center ">
+    <div id="footer" class="footer-height bg-color-dark" >
+        <div class="row align-items-end">
           <div class="col-12 bottom-pos">
            <copyRight></copyRight>
           </div>
