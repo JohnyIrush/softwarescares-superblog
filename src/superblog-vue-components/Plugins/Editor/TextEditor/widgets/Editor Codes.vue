@@ -351,10 +351,6 @@ export default {
       Event.$on('img_uploaded',()=>{
         this.showImagePrompt();
       })
-
-      this.$Editor.setElementHeight('ProseMirror');
-
-
   },
 }
 </script>

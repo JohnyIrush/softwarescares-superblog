@@ -1,19 +1,16 @@
 <template>
-<div class="row  mt-3 mb-3 justify-content-center">
- <div class="col-12">
-  <div id="E-Tech" class="collapse" >
-     <editor></editor>
+  <div id="E-Posts" class="col-12 collapse" >
+      <Posts></Posts>
   </div>
- </div>
-</div>
 </template>
 
 <script>
 //import Editor from ''
 //import Editor from '../../../Editor/TextEditor/Editor'
+import Posts from '../../Posts/Posts'
 export default {
   components:{
-
+      Posts
   },
   props: {
   },

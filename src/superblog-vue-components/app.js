@@ -41,6 +41,11 @@ Vue.prototype.$Uploader = new Uploader();
 //chart app event bus
 Vue.prototype.EventBus = new Vue();
 
+//CMS Plugin imports
+import Display from './softwarescares/superblog/Plugins/CMS/Drivers/Display.js'
+Vue.mixin(Display); //compile Display
+
+
 const app = new Vue({
     el: '#app',
 });

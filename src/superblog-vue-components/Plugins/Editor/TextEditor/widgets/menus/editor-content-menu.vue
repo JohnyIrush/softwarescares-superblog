@@ -1,9 +1,14 @@
 <template>
   <div class="col-12">
-         <div class="card-header bg-color-red toolbar-size">
+         <div class="card-header ">
           <!--edit toolbars-->
           <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
            <ul class="nav">
+
+               <!--Bold Style-->
+             <li class="nav-item m-1">
+              <button class="bg-primary text-white" :class="{ 'is-active': isActive.bold() }" @click="commands.bold"> <i class="fa fa-bold" aria-hidden="true"></i> Bold</button>
+             </li>
 
                <!--Heading styles-->
              <li class="nav-item m-1">
@@ -44,17 +49,40 @@
                </ul>
              </li>
 
+             <!--Italic-->
+             <li class="nav-item m-1">
+               <button class="bg-primary text-white" :class="{ 'is-active': isActive.italic() }" @click="commands.italic()"> <i class="fa fa-italic" aria-hidden="true"></i> Italic </button>
+             </li>
+
              <!--Paragraph-->
              <li class="nav-item m-1">
                <button class="menubar__button bg-primary text-white" :class="{ 'is-active': isActive.paragraph() }" @click="commands.paragraph"> <i class="fa fa-paragraph" aria-hidden="true"></i> Paragraph </button>
+             </li>
+
+             <!--underline-->
+             <li class="nav-item m-1">
+               <button class="bg-primary text-white" :class="{ 'is-active': isActive.underline() }" @click="commands.underline()"> <i class="fa fa-underline" aria-hidden="true"></i>Underline </button>
+             </li>
+
+             <!--strike-->
+             <li class="nav-item m-1">
+               <button class="bg-primary text-white" :class="{ 'is-active': isActive.strike() }" @click="commands.strike()"> <i class="fa fa-strikethrough" aria-hidden="true"></i> strike </button>
+             </li>
+
+             <!--Blockquote-->
+             <li class="nav-item m-1">
+               <button class="bg-primary text-white" :class="{ 'is-active': isActive.blockquote() }" @click="commands.blockquote()"> <i class="fa fa-quote-right" aria-hidden="true"></i> Blockquote </button>
              </li>
 
              <!--Image-->
              <li class="nav-item m-1">
               <button class="menubar__button bg-primary text-white" @click="showImagePrompt(commands.image)"><i class="fas fa-image    "></i>Image </button>
              </li>
-
-             <!--Table-->
+           </ul>
+          </editor-menu-bar>
+          <!--Second Toolbar -->
+           <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+           <ul class="nav">
              <li class="nav-item">
                <!--Table Creation Button-->
 					     <button class="bg-primary text-white" @click="commands.createTable({rowsCount: 3, colsCount: 3, withHeaderRow: false })"> <i class="fa fa-table" aria-hidden="true"></i> Table </button>
@@ -75,103 +103,54 @@
 
 					       	<button class="menubar__button bg-primary text-white"	@click="commands.toggleCellMerge">  <i class="fa fa-toggle-on " aria-hidden="true"></i>Cell Merge </button>
 					       </span>
-             </li>
-
-             <!--Link-->
-             <li class="nav-item ml-2">
-              <!--Link Generator-->
-               <editor-menu-bubble class="menububble" :editor="editor" @hide="hideLinkMenu" v-slot="{ commands, isActive, getMarkAttrs, menu }">
-                     <div
-                       class="menububble"
-                       :class="{ 'is-active': menu.isActive }"
-                       :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
-                     >
-      
-                       <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
-                         <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
-                         <button class="menububble__button text-danger bg-primary" @click="setLinkUrl(commands.link, null)" type="button">
-                           <i class="fas fa-trash    "></i>
-                         </button>
-                       </form>
-      
-                       <template v-else>
-                         <button 
-                           class="menububble__button text-success bg-primary"
-                           @click="showLinkMenu(getMarkAttrs('link'))"
-                           :class="{ 'is-active': isActive.link() }"
-                         >
-                           <span>{{ isActive.link() ? 'Update Link' : 'Add Link'}}</span>
-                           <i class="fa fa-link" aria-hidden="true"></i>
-                         </button>
-                       </template>
-      
-                     </div>
-               </editor-menu-bubble>  
-             </li>
-
-           </ul>
-          </editor-menu-bar>
-
-          <!--Second Toolbar -->
-           <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
-           <ul class="nav">
-             <!--Italic-->
-             <li class="nav-item m-1">
-               <button class="bg-primary text-white" :class="{ 'is-active': isActive.italic() }" @click="commands.italic()"> <i class="fa fa-italic" aria-hidden="true"></i> Italic </button>
-             </li>
-
-             <!--underline-->
-             <li class="nav-item m-1">
-               <button class="bg-primary text-white" :class="{ 'is-active': isActive.underline() }" @click="commands.underline()"> <i class="fa fa-underline" aria-hidden="true"></i>Underline </button>
-             </li>
-
-             <!--strike-->
-             <li class="nav-item m-1">
-               <button class="bg-primary text-white" :class="{ 'is-active': isActive.strike() }" @click="commands.strike()"> <i class="fa fa-strikethrough" aria-hidden="true"></i> strike </button>
-             </li>
-
-             <!--Blockquote-->
-             <li class="nav-item m-1">
-               <button class="bg-primary text-white" :class="{ 'is-active': isActive.blockquote() }" @click="commands.blockquote()"> <i class="fa fa-quote-right" aria-hidden="true"></i> Blockquote </button>
-             </li>
-
+             </li>  
              <li class="nav-item">
               <div class="menubar">
                 <button class="menubar__button bg-primary text-white" @click="commands.undo"> <i class="fa fa-undo" aria-hidden="true"></i> </button>
                 <button class="menubar__button bg-primary text-white" @click="commands.redo"> <i class="fas fa-redo    "></i> </button>
               </div>
              </li>
+             <li class="nav-item">
+                        <!--Link Generator-->
+         <editor-menu-bubble class="menububble" :editor="editor" @hide="hideLinkMenu" v-slot="{ commands, isActive, getMarkAttrs, menu }">
+               <div
+                 class="menububble"
+                 :class="{ 'is-active': menu.isActive }"
+                 :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
+               >
+
+                 <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
+                   <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
+                   <button class="menububble__button text-danger bg-primary" @click="setLinkUrl(commands.link, null)" type="button">
+                     <i class="fas fa-trash    "></i>
+                   </button>
+                 </form>
+
+                 <template v-else>
+                   <button 
+                     class="menububble__button text-success bg-primary"
+                     @click="showLinkMenu(getMarkAttrs('link'))"
+                     :class="{ 'is-active': isActive.link() }"
+                   >
+                     <span>{{ isActive.link() ? 'Update Link' : 'Add Link'}}</span>
+                     <i class="fa fa-link" aria-hidden="true"></i>
+                   </button>
+                 </template>
+
+               </div>
+         </editor-menu-bubble>  
+             </li>
            </ul>
           </editor-menu-bar>  
          </div>
-         <!--editor Body-->
-         <div class="card-body editor-window text-window-color">
-            <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content " :editor="editor" />      
-            <Uploader></Uploader>  
-            <editorview></editorview>                                                                  
+          <!--editor Body-->
+         <div v-show="false" class="card-body editor-window text-window-color">
+            <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content " :editor="editor" />                                                                      
          </div> 
-         <!--editor Footer-->
-         <div class="card-footer text-center bg-primary">
-            <div class="row">
-             <div class="col">
-                 <p class="text-white">editting....</p>
-             </div>
-             <div class="col">
-                
-             </div> 
-             <div class="col">
-                <button @click="saveData()" class="btn btn-success text-white">Save Changes</button>
-             </div>
-             <div class="#editor" ></div> 
-            </div> 
-         </div>
   </div>           
 </template>
 <script>
 
-import editorview from './editorview'
-//Media Uploader
-import Uploader from './MediaUpload/Upload'
 import { Editor, EditorContent, EditorMenuBar, EditorMenuBubble } from 'tiptap'
 import {
   Blockquote,
@@ -196,16 +175,12 @@ import {
 	TableCell,
 	TableRow,
 } from 'tiptap-extensions'
-import EditorContentMenu from './menus/editor-content-menu'
 
 export default {
   components: {
     EditorMenuBar,
     EditorContent,
     EditorMenuBubble,
-    Uploader,
-    editorview,
-    EditorContentMenu
   },
   data() {
     return {
@@ -351,36 +326,11 @@ export default {
       Event.$on('img_uploaded',()=>{
         this.showImagePrompt();
       })
-
-      this.$Editor.setElementHeight('ProseMirror');
-
-
   },
 }
 </script>
 
 <style>
-
-
-.editor
-    {
-	border:solid 1px #ccc;
-	padding: 20px;
-    min-height: 60vh;
-    }
-
-#Toolbars{
-    position: fixed;
-    z-index: 1;
-}
-
-.text-window-color{
-    background-color: rgb(12, 12, 22);
-}
-/**Toolbar Size*/
-.toolbar-size{
-    min-height: 20vh;
-}
 
 /**Table Styling*/
 .editor__content table td, .editor__content table th { 
@@ -390,10 +340,7 @@ export default {
   vertical-align: top;
    -webkit-box-sizing: border-box;
     box-sizing: border-box; 
-    position: relative; }
+    position: relative;
+}
 
-/*** Editor Width ***/
-    .editor-window{
-      width: 1000px;
-    }
 </style>

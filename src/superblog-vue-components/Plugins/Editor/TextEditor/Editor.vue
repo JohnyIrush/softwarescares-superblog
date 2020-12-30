@@ -1,14 +1,12 @@
 <template>
-    <div id="Teditor" class="editor-height p-0 responsive-page .container-fluid bg-color-darkblue">
-       <div class="row">
+   <div id="Teditor"  class="row p-0 responsive-page editor-height bg-color-darkblue">
          <div  class="col-4">
             <Sidebar></Sidebar>
          </div>
          <div  class="col-8">
             <Body></Body>
          </div>
-       </div>
-    </div>
+   </div>
 </template>
 
 <script>
