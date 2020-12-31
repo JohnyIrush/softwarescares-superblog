@@ -43,6 +43,13 @@ export default{
         }
     },
     methods: {
+        //fetch Data
+        fetchData(url){
+          axios.get(url)
+          .then((response)=>{
+              return response.data.data;
+          })
+        },
         sendRequest(method,url,data){
             try{
                return axios({

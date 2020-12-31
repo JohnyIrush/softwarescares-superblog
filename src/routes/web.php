@@ -6,6 +6,7 @@ use SoftwaresCares\SuperBlog\Http\Controllers\UploaderController;
 use SoftwaresCares\SuperBlog\Http\Controllers\SuperBlogInstallerController;
 use SoftwaresCares\SuperBlog\Http\Controllers\ContentManagementSystemController;
 use SoftwaresCares\SuperBlog\Http\Controllers\EditorController;
+use SoftwaresCares\SuperBlog\Http\Controllers\PostController;
 
 /*
  use Illuminate\Support\Facades\Storage;
@@ -124,3 +125,23 @@ Route::get('scriptupdater', [SuperBlogInstallerController::class, 'scriptUpdater
 
 //Content Management System Plugin
 Route::get('cms', [ContentManagementSystemController::class, 'cms'])->name('cms'); //CMS Dashboard
+
+//Post Management Plugin
+
+/** Posts **/
+Route::post('storepost', [PostController::class, 'store'])->name('storepost'); //Store Post
+Route::get('getposts', [PostController::class, 'posts'])->name('getposts'); //Fetch Posts
+Route::get('/showpost/{id}', [PostController::class, 'showPost'])->name('showpost'); //Show post
+Route::post('/updatepost/{id}', [PostController::class, 'updatePost'])->name('updatepost'); //Updatepost
+Route::post('/updatepostcontent/{id}', [PostController::class, 'updatePostContent'])->name('updatepostcontent'); //Update post content
+Route::post('/deletepost/{id}', [PostController::class, 'deletePost'])->name('deletepost'); //Delete post
+
+/** Categories **/
+Route::get('getcategories', [PostController::class, 'categories'])->name('getcategories'); //Fetch Categories
+Route::post('storecategory', [PostController::class, 'storeCategory'])->name('storecategory'); //Store Category
+Route::get('/showcategory/{id}', [PostController::class, 'showCategory'])->name('showcategory'); //Show Category
+Route::post('/updatecategory/{id}', [PostController::class, 'updateCategory'])->name('updatecategory'); //Update Category
+Route::post('/deletecategory/{id}', [PostController::class, 'deleteCategory'])->name('deletecategory'); //Delete Category
+
+//Display Plugin
+Route::get('displaypost', [PostController::class, 'displayPost'])->name('displaypost'); //display post

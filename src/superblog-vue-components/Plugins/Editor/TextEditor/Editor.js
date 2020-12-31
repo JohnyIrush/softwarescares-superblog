@@ -1,8 +1,7 @@
-import { parseHTML } from "jquery";
-
-export default class global {
+export default class Editor {
     constructor() {
         this.currentProductId = localStorage.getItem("currentProductId") ? localStorage.getItem("currentProductId") : null;
+        this.readyPost = localStorage.getItem("readyPost") ? localStorage.getItem("readyPost") : null; //store post that is ready to be saved
     }
    
     /**
@@ -18,4 +17,12 @@ export default class global {
       ////EPlate.style.Height = '500vh';
       //console.log(EPlate[0]);
     } 
+
+    saveReadyPost(Post){
+        localStorage.setItem("readyPost", Post);
+    }
+
+    returnReadyPost(){
+        return localStorage.getItem('readyPost');
+    }
 }

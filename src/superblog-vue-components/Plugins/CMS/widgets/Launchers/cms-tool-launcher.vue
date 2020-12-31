@@ -5,7 +5,6 @@
           <h1 class="text-primary text-center">CMS Tools</h1>
       </div>
     </div>
-    <toolsdiaplay></toolsdiaplay>
     <div class="row  mt-3 mb-3 justify-content-center">
       <!--Tech Editor Launcher-->
      <div class="col-sm-4">

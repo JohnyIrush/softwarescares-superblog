@@ -148,7 +148,8 @@
          <div class="card-body editor-window text-window-color">
             <editor-content id="editor"  class="editor bg-white Ta-hieght editor__content " :editor="editor" />      
             <Uploader></Uploader>  
-            <editorview></editorview>                                                                  
+            <editorview></editorview>       
+            <PostModal></PostModal>                                                           
          </div> 
          <!--editor Footer-->
          <div class="card-footer text-center bg-primary">
@@ -160,7 +161,7 @@
                 
              </div> 
              <div class="col">
-                <button @click="saveData()" class="btn btn-success text-white">Save Changes</button>
+                <button @click="postEditMode ? updatePost() : saveData()" class="btn btn-success text-white">Save Changes</button>
              </div>
              <div class="#editor" ></div> 
             </div> 
@@ -169,6 +170,7 @@
 </template>
 <script>
 
+import PostModal from './PostModal'
 import editorview from './editorview'
 //Media Uploader
 import Uploader from './MediaUpload/Upload'
@@ -205,7 +207,8 @@ export default {
     EditorMenuBubble,
     Uploader,
     editorview,
-    EditorContentMenu
+    EditorContentMenu,
+    PostModal
   },
   data() {
     return {
@@ -239,12 +242,37 @@ export default {
       }),
       linkUrl: null,
       linkMenuIsActive: false,
+      postEditMode: this.$Post.returnEditPostMode() ,
     }
   },
   beforeDestroy() {
     this.editor.destroy()
   },
   methods: {
+      //edit Post
+      updatePost(){
+         const Post = {
+             post: this.editor.getHTML(),
+         }
+
+         axios.post('/updatepostcontent/' + this.$Post.returnEditPostId(),Post)
+         .then(()=>{
+              this.$Post.setEditPostMode(0);
+              this.$swal({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              setTimeout(() => {
+                $('#edit-view').modal('show');
+              }, 1500);
+         })
+         .catch(()=>{
+            alert('There was an error Saving Data to the database')
+         })
+      },
     /**
      * Reading Media
     */
@@ -289,47 +317,26 @@ export default {
       
     },
     /**
-     * Fetch Product about
+     * Fetch Post Content
      * and pass to editor 
      * for editting
     */
-      fetchAbout(){
-         axios.get('/showproductdata/' + Number(localStorage.currentProductId))
-         .then((data)=>{
-            //alert('Data was fetched successfully in the database');
-            //console.log(data.data.about);
-            this.editor.setContent(data.data.about,true,true);
-         })
-         .catch(()=>{
-            //alert('There was an error fetching Data from the database')
-         })
+      fetchPostContent(){
+         if (this.postEditMode==true) {
+             axios.get('/showpost/' + this.$Post.returnEditPostId())
+             .then((response)=>{
+                 alert(response.data.post)
+                 this.editor.setContent(response.data.post,true,true);
+             })
+         }
       },
     /**
      * Store The Html data
      * to database
     */
       saveData(){
-         const data = {
-           id: Number(localStorage.currentProductId),
-           about: this.editor.getHTML()
-         }
-          
-         axios.post('/saveproductabout/' + data.id,data)
-         .then(()=>{
-              this.$swal({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Your work has been saved',
-                showConfirmButton: false,
-                timer: 1500
-              })
-              setTimeout(() => {
-                $('#edit-view').modal('show');
-              }, 1500);
-         })
-         .catch(()=>{
-            //alert('There was an error Saving Data to the database')
-         })
+        this.$Editor.saveReadyPost(this.editor.getHTML());
+        $('#PostModal').modal('show');
       },
       /**
        * Collapse Menu
@@ -345,14 +352,14 @@ export default {
   },
   mounted() {
       //alert(this.editor.getHTML())
-      this.fetchAbout();
+      this.fetchPostContent();
       this.readMedia()
 
       Event.$on('img_uploaded',()=>{
         this.showImagePrompt();
       })
 
-      this.$Editor.setElementHeight('ProseMirror');
+
 
 
   },

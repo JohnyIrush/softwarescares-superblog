@@ -45,8 +45,15 @@ Vue.prototype.EventBus = new Vue();
 import Display from './softwarescares/superblog/Plugins/CMS/Drivers/Display.js'
 Vue.mixin(Display); //compile Display
 
+//CMS Post Plugin imports
+import Post from './softwarescares/superblog/Plugins/CMS/Posts/Post'
+Vue.prototype.$Post = new Post();
+
+//Vuex import
+import {store} from './softwarescares/superblog/Plugins/store'
 
 const app = new Vue({
+    store: store,
     el: '#app',
 });
 
