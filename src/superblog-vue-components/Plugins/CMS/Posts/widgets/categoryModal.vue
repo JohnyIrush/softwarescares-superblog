@@ -19,7 +19,7 @@
           <!--Category Description-->
           <div class="form-group">
             <label class="text-white" for="description">Description</label>
-            <input name="description" v-model="CategoryDetails.description" type="text" class="form-control" id="description">
+            <textarea  name="description" v-model="CategoryDetails.description" class="form-control" id="description" rows="5"></textarea>
           </div>
        </div>
        <div class="modal-footer">

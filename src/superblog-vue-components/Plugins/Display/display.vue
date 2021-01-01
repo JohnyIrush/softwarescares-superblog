@@ -1,15 +1,15 @@
 <template>
-    <div id="CMS" class="Application-height p-0 responsive-page .container-fluid bg-color-darkblue">
-      
+    <div id="CMS" class="Application-height  .container-fluid bg-color-darkblue overflow-scroll hide-x-overflow">
+      <ThreeGridDisplay></ThreeGridDisplay>
     </div>
 </template>
 
 <script>
-
+import ThreeGridDisplay from './widgets/grids/Three-grid-display'
 
 export default {
       components:{
-
+       ThreeGridDisplay
       }
 
       }

@@ -52,7 +52,7 @@ class UploadStorageDriver
         }
 
         
-        return redirect(route('media'));
+        //return redirect(route('media'));
 
     }
 

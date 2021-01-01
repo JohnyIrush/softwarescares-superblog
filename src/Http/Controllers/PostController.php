@@ -130,6 +130,11 @@ class PostController extends Controller
         $category->delete();     
     }
 
+    //Display posts
+    public function displayPost()
+    {
+        return view('superblog::Plugins.Display.display');        
+    }
 
     /**
      * Show the form for editing the specified resource.

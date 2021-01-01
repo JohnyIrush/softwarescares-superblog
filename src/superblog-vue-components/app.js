@@ -15,6 +15,9 @@ Vue.component('cms', require('./softwarescares/superblog/Plugins/CMS/cms.vue').d
 //CMS Editor imports
 Vue.component('editor', require('./softwarescares/superblog/Plugins/Editor/TextEditor/Editor.vue').default); //Rich text editor
 
+//cms Display plugin imports
+Vue.component('display', require('./softwarescares/superblog/Plugins/Display/display.vue').default); //Rich text editor
+
 //import Plugin classes
 import Request from './softwarescares/superblog/Plugins/common/Request' //send http requests
 Vue.mixin(Request); //compile commonjs

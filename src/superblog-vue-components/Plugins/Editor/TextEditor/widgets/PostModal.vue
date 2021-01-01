@@ -19,7 +19,7 @@
           <!--Post Description-->
           <div class="form-group">
             <label class="text-white" for="description">Description</label>
-            <input name="description" v-model="PostDetails.description" type="text" class="form-control" id="description">
+            <textarea  name="description" v-model="PostDetails.description" class="form-control" id="description" rows="5"></textarea>
           </div>
           <!--Post Categories-->
           <div class="form-group">
