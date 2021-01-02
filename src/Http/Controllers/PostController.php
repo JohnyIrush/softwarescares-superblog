@@ -8,6 +8,8 @@ use SoftwaresCares\SuperBlog\Models\Post;
 
 use SoftwaresCares\SuperBlog\Models\Category;
 
+use SoftwaresCares\SuperBlog\Models\Media;
+
 class PostController extends Controller
 {
     /**
@@ -46,6 +48,17 @@ class PostController extends Controller
         $post = Post::find($id);
         return response()->json($post,200);
     }
+
+    //update post thumnail
+    public function updatePostThumbnail(Request $request, $id)
+    {
+        $thumbnail = Media::find($request->thumbnail);
+        //dd($thumbnail->location);
+        $post = Post::find($id);
+        $post->thumbnail = $thumbnail->location;
+        $post->update();   
+    }
+
 
         /**
      * Update Category Details
@@ -134,6 +147,16 @@ class PostController extends Controller
     public function displayPost()
     {
         return view('superblog::Plugins.Display.display');        
+    }
+
+    //update post thumnail
+    public function updateCategoryThumbnail(Request $request, $id)
+    {
+        $thumbnail = Media::find($request->thumbnail);
+        //dd($thumbnail->location);
+        $category = Category::find($id);
+        $category->thumbnail = $thumbnail->location;
+        $category->update();   
     }
 
     /**

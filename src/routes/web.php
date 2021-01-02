@@ -135,13 +135,15 @@ Route::get('/showpost/{id}', [PostController::class, 'showPost'])->name('showpos
 Route::post('/updatepost/{id}', [PostController::class, 'updatePost'])->name('updatepost'); //Updatepost
 Route::post('/updatepostcontent/{id}', [PostController::class, 'updatePostContent'])->name('updatepostcontent'); //Update post content
 Route::post('/deletepost/{id}', [PostController::class, 'deletePost'])->name('deletepost'); //Delete post
-
+Route::post('/updatepostthumbnail/{id}', [PostController::class, 'updatePostThumbnail'])->name('updatepostthumbnail'); //updatepostthumbnail
 /** Categories **/
 Route::get('getcategories', [PostController::class, 'categories'])->name('getcategories'); //Fetch Categories
 Route::post('storecategory', [PostController::class, 'storeCategory'])->name('storecategory'); //Store Category
 Route::get('/showcategory/{id}', [PostController::class, 'showCategory'])->name('showcategory'); //Show Category
 Route::post('/updatecategory/{id}', [PostController::class, 'updateCategory'])->name('updatecategory'); //Update Category
 Route::post('/deletecategory/{id}', [PostController::class, 'deleteCategory'])->name('deletecategory'); //Delete Category
+Route::post('/updatecategorythumbnail/{id}', [PostController::class, 'updateCategoryThumbnail'])->name('updatecategorythumbnail'); //update category thumbnail
+
 
 //Display Plugin
 Route::get('displaypost', [PostController::class, 'displayPost'])->name('displaypost'); //display post

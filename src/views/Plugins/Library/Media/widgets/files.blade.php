@@ -1,4 +1,4 @@
-@if ($type=='image')
+@if ($type=='image' )
  <div class="row bg-color-darkblue align-items-center">
   <div class="col-12 card bg-color-darkblue">
      @if (sizeof($images)>0)

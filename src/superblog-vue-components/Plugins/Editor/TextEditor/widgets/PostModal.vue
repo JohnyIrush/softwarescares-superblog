@@ -82,9 +82,8 @@ export default {
                 showConfirmButton: false,
                 timer: 1500
               })
-              setTimeout(() => {
-                $('#edit-view').modal('show');
-              }, 1500);
+            this.$Post.setEditPostMode(0);
+            this.$Post.setEditPostId(0);
          })
          .catch(()=>{
             alert('There was an error Saving Data to the database')

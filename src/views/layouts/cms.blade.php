@@ -36,6 +36,7 @@
         <main>
             @yield('content')
         </main>
+        @include('superblog::Plugins.CMS.widgets.setmedia')
         <!--include('superblog::Plugins.Library.Uploader.widgets.uploader')--> 
     </div>
     <!-- Scripts -->

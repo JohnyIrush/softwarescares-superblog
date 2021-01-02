@@ -36,6 +36,8 @@
                         <button @click="editPostContent(Post.id)" class="btn btn-success text-white float-left mr-1" > Edit Post</button>  
                         <button class="btn btn-warning text-white float-left mr-1" > View Post</button>  
                         <button @click="deletePost(Post.id)" class="btn btn-danger text-white float-left" > Delete</button> 
+                        <button @click="setMedia(Post.id)" class="btn btn-secondary text-white float-left mr-1" > Set Media</button>  
+
                      </td> 
                 </tr>    
                </tbody>
@@ -62,6 +64,12 @@ export default {
          }
       },
       methods:{
+        //set Post Media
+        setMedia(id){
+            this.$Post.setEditPostMode(1);
+            this.$Post.setEditPostId(id);
+            window.location.assign('/images');
+        },
         editPostContent(id){
             this.$Post.setEditPostMode(1);
             this.$Post.setEditPostId(id);

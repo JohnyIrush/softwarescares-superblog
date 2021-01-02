@@ -3,6 +3,8 @@
 namespace SoftwaresCares\SuperBlog\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SoftwaresCares\SuperBlog\Models\Media;
+use SoftwaresCares\SuperBlog\Http\Drivers\StorageCapacityDriver;
 
 class ContentManagementSystemController extends Controller
 {
@@ -13,7 +15,26 @@ class ContentManagementSystemController extends Controller
      */
     public function cms()
     {
-        return view('superblog::Plugins.CMS.cms');
+        $type = "all";
+        $images = Media::where('type', 'image')->get();
+        $text = Media::where('type', 'text')->get();
+        $videos = Media::where('type', 'video')->get();
+        $audios = Media::where('type', 'audio')->get();
+        $media = new StorageCapacityDriver();
+
+        return view('superblog::Plugins.CMS.cms')->with(
+            [
+                'type'=>$type,
+                'images'=>$images,
+                'text'=>$text,
+                'videos'=>$videos,
+                'audios'=>$audios,
+                'totalFilesCount' => $media->getTotalFilesCount(),
+                'imagesCount' => $media->getTotalImagesCount(),
+                'audiosCount' => $media->getTotalAudiosCount(),
+                'videosCount' => $media->getTotalVideosCount(),
+                'textCount' => $media->getTotalTextFilesCount()
+                ]);
     }
 
     /**

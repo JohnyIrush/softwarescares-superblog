@@ -31,7 +31,9 @@
                     <td>{{Category.description}}</td>
                     <td class=""> 
                         <button @click="editCategory(Category.id)" type="button" class="btn btn-info float-left mb-1 mr-1 text-white"> <i class="fa fa-edit" aria-hidden="true"></i> Edit</button> 
-                        <button @click="deleteCategory(Category.id)" class="btn btn-danger text-white float-left" > Delete</button>  
+                        <button @click="deleteCategory(Category.id)" class="btn btn-danger text-white float-left" > Delete</button> 
+                        <button @click="setMedia(Category.id)" class="btn btn-secondary text-white float-left mr-1" > Set Media</button>  
+ 
                      </td> 
                 </tr>    
                </tbody>
@@ -60,6 +62,12 @@ export default {
 
   },
       methods:{
+        //set Post Category
+        setMedia(id){
+            this.$Post.setEditCategoryMode(1);
+            this.$Post.setEditCategoryId(id);
+            window.location.assign('/images');
+        },
         //delete category
         deleteCategory(id){
          this.$swal({
