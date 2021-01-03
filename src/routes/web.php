@@ -136,6 +136,8 @@ Route::post('/updatepost/{id}', [PostController::class, 'updatePost'])->name('up
 Route::post('/updatepostcontent/{id}', [PostController::class, 'updatePostContent'])->name('updatepostcontent'); //Update post content
 Route::post('/deletepost/{id}', [PostController::class, 'deletePost'])->name('deletepost'); //Delete post
 Route::post('/updatepostthumbnail/{id}', [PostController::class, 'updatePostThumbnail'])->name('updatepostthumbnail'); //updatepostthumbnail
+Route::post('/displaypostbycategory', [PostController::class, 'displayPostByCategory'])->name('displaypostbycategory'); //displaypostbycategory
+
 /** Categories **/
 Route::get('getcategories', [PostController::class, 'categories'])->name('getcategories'); //Fetch Categories
 Route::post('storecategory', [PostController::class, 'storeCategory'])->name('storecategory'); //Store Category

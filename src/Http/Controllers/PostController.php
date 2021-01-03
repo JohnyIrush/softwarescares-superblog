@@ -10,6 +10,8 @@ use SoftwaresCares\SuperBlog\Models\Category;
 
 use SoftwaresCares\SuperBlog\Models\Media;
 
+use SoftwaresCares\SuperBlog\Http\Resources\PostResource;
+
 class PostController extends Controller
 {
     /**
@@ -90,6 +92,21 @@ class PostController extends Controller
         $post->delete();     
     }
 
+    /**
+     * Display Post By Category
+    */
+    /**
+     * Show Category
+    */
+
+    public function displayPostByCategory(Request $request)
+    {
+        //dd($request->category);
+        $post = Post::where('category',$request->category)->paginate($request->pagination);
+        //$post = Post::paginate(3);
+        //return response()->json($post,200);
+        return PostResource::collection($post);
+    }
     /******* Categories *******/
 
     /**
