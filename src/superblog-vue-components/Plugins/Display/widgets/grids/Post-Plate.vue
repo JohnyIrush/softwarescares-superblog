@@ -7,7 +7,7 @@
      <div class="card-body bg-color-red post-plate-overlay text-center">
         <a href="#"> <h3 class="card-title text-primary">{{Post.title}}</h3> </a>
       <p class="card-text text-white"> {{Post.description}} </p>
-      <a href="#" class="btn btn-primary">View Post</a>
+      <button @click="viewPost(Post.id)" class="btn btn-primary">View Post</button>
      </div>
    </div>
   </div>
@@ -20,6 +20,18 @@ export default {
   props: ['Post'],
       components:{
 
+      },
+      data(){
+         return{
+
+         }
+      },
+
+      methods: {
+        viewPost(id){
+             this.$PostDisplay.setViewPostId(id);
+             window.location.assign('/postview');
+        }
       }
 
       }

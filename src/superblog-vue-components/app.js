@@ -17,6 +17,8 @@ Vue.component('editor', require('./softwarescares/superblog/Plugins/Editor/TextE
 
 //cms Display plugin imports
 Vue.component('display', require('./softwarescares/superblog/Plugins/Display/display.vue').default); //Rich text editor
+Vue.component('postview', require('./softwarescares/superblog/Plugins/Display/widgets/postview.vue').default); //Posts View
+
 
 //import Plugin classes
 import Request from './softwarescares/superblog/Plugins/common/Request' //send http requests
@@ -51,6 +53,11 @@ Vue.mixin(Display); //compile Display
 //CMS Post Plugin imports
 import Post from './softwarescares/superblog/Plugins/CMS/Posts/Post'
 Vue.prototype.$Post = new Post();
+
+//Post Display Plugin
+import PostDisplay from './softwarescares/superblog/Plugins/Display/PostDisplay';
+Vue.prototype.$PostDisplay = new PostDisplay();
+
 
 //Vuex import
 import {store} from './softwarescares/superblog/Plugins/store'

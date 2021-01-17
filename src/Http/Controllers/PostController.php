@@ -92,6 +92,13 @@ class PostController extends Controller
         $post->delete();     
     }
 
+    //Post Display
+
+    public function postView()
+    {
+        return view('superblog::Plugins.Display.widgets.postview'); 
+    }
+
     /**
      * Display Post By Category
     */

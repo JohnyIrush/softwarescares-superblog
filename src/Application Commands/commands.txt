@@ -32,3 +32,5 @@ composer remove softwarescares/superblog
 php artisan superblog:install
 
 npm install tiptap-extensions
+
+php artisan make:resource PostResource
