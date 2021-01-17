@@ -37,7 +37,7 @@ Route::get('/superblog', [SuperblogController::class, 'index']);
 */
 
 //Media Display
-
+Route::get('/', [LibraryController::class, 'mediaLibrary'])->name('medialibrary'); //Media Dashboard Display
 Route::get('medialibrary', [LibraryController::class, 'mediaLibrary'])->name('medialibrary'); //Media Dashboard Display
 Route::get('images', [LibraryController::class, 'images'])->name('images'); //Images Display
 Route::get('videos', [LibraryController::class, 'videos'])->name('videos'); //videos Display

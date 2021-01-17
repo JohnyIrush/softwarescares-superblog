@@ -21,7 +21,7 @@ class SuperBlogInstaller {
 
 
         $packagescripts = fopen($packagescript, "r") or die("Unable to open file!");
-        $appscripts = fopen($appscript, "w") or die("Unable to open file!");
+        $appscripts = fopen($appscript, "a") or die("Unable to open file!");
 
         $scriptupdate = fwrite($appscripts, fread($packagescripts ,filesize($packagescript)));
 
